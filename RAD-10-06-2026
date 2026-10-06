@@ -1,0 +1,91 @@
+import java.util.Scanner;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+ 
+        String fullName;
+        int age;
+        String address;
+        double weight;
+        double height;
+        System.out.print("Enter your Name   : ");
+        fullName = scanner.nextLine();
+ 
+        System.out.print("Enter your Age    : ");
+        age = scanner.nextInt();
+        scanner.nextLine();
+ 
+        System.out.print("Enter your Address: ");
+        address = scanner.nextLine();
+ 
+        System.out.print("Enter Weight (kg) : ");
+        weight = scanner.nextDouble();
+ 
+        System.out.print("Enter Height (cm) : ");
+        height = scanner.nextDouble();
+ 
+        System.out.println("My name is " + fullName + ", and I am " + age + " years old. "
+             + "I currently reside at " + address + ". "
+             + "My physical records show a weight of " + weight + " kg and a height of " + height + " cm.");
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+import java.util.Scanner;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double num1, num2, result;
+        char operation;
+        char isContinue;
+ 
+        do {
+            System.out.print("Enter value for X: ");
+            num1 = scanner.nextDouble();
+            System.out.print("Enter value for Y: ");
+            num2 = scanner.nextDouble();
+ 
+            System.out.print("Enter your choice (+, -, *, /): ");
+            operation = scanner.next().charAt(0);
+ 
+            switch (operation) {
+                case '+':
+                    result = num1 + num2;
+                    System.out.println("Sum: " + num1 + " + " + num2 + " = " + result);
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    System.out.println("Difference: " + num1 + " - " + num2 + " = " + result);
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    System.out.println("Product: " + num1 + " * " + num2 + " = " + result);
+                    break;
+                case '/':
+                    if (num2 == 0) {
+                        System.out.println("Runtime Error: Cannot divide by zero.");
+                    } else {
+                        result = num1 / num2;
+                        System.out.println("Quotient: " + num1 + " / " + num2 + " = " + result);
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid Option: Please choose (+, -, *, /).");
+                    break;
+            }
+ 
+            System.out.print("Do you want to try another numbers? (Y/N): ");
+            isContinue = scanner.next().charAt(0);
+ 
+        } while (isContinue == 'Y' || isContinue == 'y');
+ 
+        scanner.close();
+    }
+}
